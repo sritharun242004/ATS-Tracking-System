@@ -1,4 +1,5 @@
-#streamlit
-#PyPDF2
-#google.generativeai
-#python-dotenv
+streamlit
+google.generativeai
+PyPDF2
+google-cloud-aiplatform
+python-dotenv
