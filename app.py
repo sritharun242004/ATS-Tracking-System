@@ -4,7 +4,6 @@ import os
 import PyPDF2 as pdf
 from dotenv import load_dotenv
 
-
 # Load all the environment variables
 load_dotenv()
 
@@ -25,7 +24,6 @@ def input_pdf_text(uploaded_file):
         page = reader.pages[page]
         text += str(page.extract_text())
     return text
-
 
 # Prompt template
 input_prompt = """
