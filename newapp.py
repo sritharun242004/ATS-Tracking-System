@@ -1,6 +1,8 @@
 import streamlit as st
 import nltk
 import spacy
+import os
+nltk.data.path.append('/Users/tharunkumarl/Git Hub Repos/nltk_data')
 nltk.download('stopwords')
 spacy.load('en_core_web_sm')
 import pandas as pd
