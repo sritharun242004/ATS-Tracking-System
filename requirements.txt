@@ -1,6 +1,11 @@
+streamlit
+google.generativeai
+PyPDF2
+google-cloud-aiplatform
+python-dotenv
+
 pdfminer3
 pyresparser
-streamlit
 pandas
 pafy
 plotly
