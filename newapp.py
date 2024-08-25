@@ -18,6 +18,9 @@ from PIL import Image
 import pafy
 import plotly.express as px
 import youtube_dl
+from Courses import ds_course, web_course, android_course, ios_course, uiux_course, resume_videos, interview_videos
+
+# Your code here
 
 def fetch_yt_video(link):
     video = pafy.new(link)
