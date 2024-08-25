@@ -4,7 +4,7 @@ PyPDF2
 google-cloud-aiplatform
 python-dotenv
 
-pdfminer3
+pdfminer.six==20201018
 pyresparser
 pandas
 pafy
