@@ -4,6 +4,8 @@ import numpy as np
 import nltk
 from nltk.corpus import stopwords
 import base64
+import time
+import datetime
 from pdfminer.high_level import extract_text
 from pyresparser import ResumeParser
 from PIL import Image
@@ -12,6 +14,10 @@ import plotly.express as px
 
 # Download NLTK stopwords
 nltk.download('stopwords')
+
+# Load the spaCy model
+import spacy
+nlp = spacy.load('en_core_web_sm')
 
 # Function to read and parse the resume
 def parse_resume(pdf_file):
