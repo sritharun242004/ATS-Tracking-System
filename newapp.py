@@ -3,23 +3,27 @@ import pandas as pd
 import numpy as np
 import nltk
 from nltk.corpus import stopwords
-nltk.download('stopwords')
 import base64
-import time
-import datetime
 from pdfminer.high_level import extract_text
 from pyresparser import ResumeParser
 from PIL import Image
 import io
 import plotly.express as px
 
+# Download NLTK stopwords
+nltk.download('stopwords')
+
 # Function to read and parse the resume
 def parse_resume(pdf_file):
-    text = extract_text(pdf_file)
-    with open("temp_resume.pdf", "wb") as f:
-        f.write(pdf_file.getbuffer())
-    resume_data = ResumeParser('temp_resume.pdf').get_extracted_data()
-    return resume_data
+    try:
+        text = extract_text(pdf_file)
+        with open("temp_resume.pdf", "wb") as f:
+            f.write(pdf_file.getbuffer())
+        resume_data = ResumeParser('temp_resume.pdf').get_extracted_data()
+        return resume_data
+    except Exception as e:
+        st.error(f"An error occurred while parsing the resume: {e}")
+        return None
 
 # Function to display the PDF
 def display_pdf(file):
@@ -46,7 +50,7 @@ def main():
             st.write(f"**Name:** {resume_data.get('name')}")
             st.write(f"**Email:** {resume_data.get('email')}")
             st.write(f"**Skills:** {', '.join(resume_data.get('skills', []))}")
-            
+
             # Skill recommendations
             recommended_skills = ["Python", "Data Analysis", "Machine Learning", "Web Development"]
             st.subheader("Recommended Skills")
@@ -55,7 +59,7 @@ def main():
                     st.write(f"- {skill}")
 
             # Course recommendations based on field
-            field = resume_data.get('designition', '').lower()
+            field = resume_data.get('designation', '').lower()  # corrected key from 'designition' to 'designation'
             st.subheader("Recommended Courses")
             if "data" in field:
                 st.write("- Data Science Bootcamp")
