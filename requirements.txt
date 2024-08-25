@@ -3,3 +3,11 @@ google.generativeai
 PyPDF2
 google-cloud-aiplatform
 python-dotenv
+
+streamlit
+pandas
+numpy
+pdfminer.six
+pyresparser
+Pillow
+plotly
