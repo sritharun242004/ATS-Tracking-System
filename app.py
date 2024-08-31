@@ -97,3 +97,4 @@ if submit:
         text = input_pdf_text(uploaded_file)
         response = get_gemini_response(input_prompt.format(text=text, jd=jd))
         st.subheader(response)
+        
